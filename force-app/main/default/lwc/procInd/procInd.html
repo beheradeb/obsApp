@@ -1,0 +1,12 @@
+<template>
+    <div class="slds-card" style="height: 100px">
+            <div class="slds-var-m-top_xx-large">
+                <lightning-progress-indicator current-step={currstp} type="base" variant="base">
+                    <lightning-progress-step label="Step 1" value="1" data-id="1" onclick={handleChange}></lightning-progress-step>
+                    <lightning-progress-step label="Step 2" value="2" data-id="2" onclick={handleChange}></lightning-progress-step>
+                    <lightning-progress-step label="Step 3" value="3" data-id="3" onclick={handleChange}></lightning-progress-step>
+                    <lightning-progress-step label="Step 4" value="4" data-id="4" onclick={handleChange}></lightning-progress-step>
+                </lightning-progress-indicator>
+            </div>
+    </div>
+</template>

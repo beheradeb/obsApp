@@ -1,0 +1,56 @@
+<template>
+    <lightning-card variant="narrow">
+        <div class="slds-var-m-around_medium">
+            <b>Check If there are any records present in the Object</b>
+        </div>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                       <div class="slds-truncate" >Object Name</div>
+                    </th>
+                    <th class="" scope="col">
+                       <div class="slds-truncate" >Number of Unprocess Records</div>
+                    </th>
+                    <th class="" scope="col">
+                       <div class="slds-truncate" >Buttons</div>
+                    </th>
+                </tr>
+            </thead>    
+             <tbody>
+                <template for:each={recLsts} for:item="recLst">
+                    <tr class="slds-hint-parent" key={recLst.Id}>
+
+                        <td>
+                            <div class="slds-line-clamp_x-small">{recLst.objName}</div>
+                        </td>
+
+                        <td>
+                            <div class="slds-line-clamp_x-small">{recLst.noOfRec}</div>
+                        </td>
+
+                        <td>
+                            <div class="slds-truncate " >
+                                <div>
+                                    <lightning-button   label="Check"  onclick={checkAgain}  disabled={disableCheckAgain} data-nam={recLst.objName} data-num={recLst.noOfRec} ></lightning-button>
+                                    <lightning-button  class="slds-var-m-left_small"  label="Process"  onclick={processRecords} disabled={disableProcessRecord} data-num={recLst.noOfRec} data-nam={recLst.objName}></lightning-button> 
+                                </div>
+                             </div>
+                        </td>
+
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <div slot="footer">
+            <lightning-button vertical-align="end" class="slds-float_left" variant="Brand" label="Back"  onclick={backBtn}  disabled={enableBackButton}  ></lightning-button>  
+            <lightning-button  class="slds-var-m-left_small" variant="brand" label="Check All" disabled={disableCheckAllBtn} onclick={CheckAllBtn} ></lightning-button>
+            <lightning-button  class="slds-var-m-left_small" variant="brand" label="Complete" disabled={disableCompBtn} onclick={compBtn} ></lightning-button>
+        </div>
+        <template lwc:if={spinner}>
+            <div class="exampleHolder">
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </div>
+        </template>
+    </lightning-card>
+</template>

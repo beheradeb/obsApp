@@ -1,0 +1,148 @@
+<template>
+  <lightning-card>
+      <lightning-layout multiple-rows="true">
+
+          <lightning-layout-item padding="around-small" size="12">
+              <lightning-layout>
+                  <lightning-layout-item padding="around-small" size="6">
+                      <div>
+                        <lightning-combobox
+                          label="Choose Object"
+                          placeholder="Select Object"
+                          options={allObjectsOpt}
+                          value={value}
+                          onchange={handleObj}
+                        ></lightning-combobox>
+                      </div>
+                  </lightning-layout-item>
+                  <lightning-layout-item padding="around-small" size="6">
+                    <div>
+                      <lightning-combobox
+                        label="Choose Text Field"
+                        placeholder="Select Text field to process NLP"
+                        options={allFiledsOpt}
+                        value={value}
+                        onchange={handleTxtFld}
+                      ></lightning-combobox>
+                    </div>
+                  </lightning-layout-item>
+
+              </lightning-layout>
+          </lightning-layout-item>
+
+          <lightning-layout-item class="slds-var-p-left_x-small" size="12">
+            <lightning-layout>
+              <lightning-layout-item class="slds-var-p-left_medium" size="4">
+                <div>
+                  <lightning-input label= "Create New Field"  value={value} type="text" placeholder="Enter Field Label Name" onchange={handleLbl}></lightning-input>
+                </div>
+              </lightning-layout-item>
+              <lightning-layout-item class="slds-var-p-left_medium slds-var-p-top_xx-small" size="4">
+                <div>
+                  <lightning-input  value={value} type="text" placeholder="Enter Field API Name" onchange={handleApi}></lightning-input>
+                </div>
+              </lightning-layout-item>
+              <lightning-layout-item class="slds-var-p-left_medium slds-var-p-top_large" size="4">
+                <div>
+                  <lightning-button variant="brand" label="Create New Field"  onclick={btnCrNewFld}></lightning-button>
+                </div>
+              </lightning-layout-item>
+
+          </lightning-layout>
+          </lightning-layout-item>
+
+          <lightning-layout-item padding="around-small" size="12">
+            <div class="slds-var-p-around_small">
+              <lightning-dual-listbox 
+                class="demo2"
+                label="Select Fields to Extract"
+                options={fldsToFetchOpt}
+                value={value}
+                onchange={handleFldsToFetch}
+              ></lightning-dual-listbox>
+            </div>
+          </lightning-layout-item> 
+
+          <lightning-layout-item flexibility="auto" class="slds-var-p-horizontal_xx-large" size="12">
+              <div>
+                <lightning-button vertical-align="end"  variant="Brand" label="Next"  onclick={nextBtn}  disabled={enableButton}  class="slds-float_right"></lightning-button>  
+              </div>
+          </lightning-layout-item>
+
+      </lightning-layout>
+    </lightning-card>
+</template>
+
+
+
+
+
+
+
+
+
+<!-- 
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+<div class="slds-grid slds-wrap fieldRow">
+        <div class="">
+          <lightning-input label= "Create New Field"  value={text} type="text" placeholder="Enter Field Name" onchange={fieldValue}></lightning-input>
+
+        </div>
+        <div class="inputspace">
+          <lightning-input  value={texts} type="text" placeholder="Enter Field API" onchange={fieldAPI}></lightning-input>
+
+        </div>
+         
+        </br>
+          <lightning-button class="example" variant="brand" label="Create New Field +"  onclick={handleButtonClick}></lightning-button>
+     
+      </div>
+      <div class="slds-grid slds-gutters new" >
+        <div class="slds-col slds-size_2-of-3">
+          
+        </div>
+         
+          <lightning-button class="example1" variant="brand" label="Next >>"  onclick={handleButtonClick1}></lightning-button>
+
+         
+      <div class="slds-spinner_container" if:true={showSpinner}>
+        <div role="status" class="slds-spinner slds-spinner_medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+  </div>
+      <div class="slds-col slds-p-top_small">
+        <p><strong>Note: </strong>A new field will be created in the name “Others” will be created on the selected object to store the additional extracted data.</p>
+      </div>
+
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Field already exist</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p><b>Others filed already exist do you want to use existing field or create a new field for ChatGPT others data.
+                    </b></p>
+                    
+                </div>
+                
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={CreateNewField} title="Create New Field">Create New Field</button>
+                    <button class="slds-button slds-button_brand" onclick={UseExistingField} title="Use Existing Field">Use Existing Field</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+ -->

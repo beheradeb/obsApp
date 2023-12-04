@@ -1,0 +1,67 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <article class="slds-card slds-clearfix">
+
+        <header class="slds-card__header slds-clearfix">
+            <div class="slds-text-align_right">
+                <lightning-button vertical-align="end"  variant="Brand" label="Add"  onclick={addBtn}  disabled={enableButton}  ></lightning-button>  
+            </div>
+        </header>
+        
+        <footer class="slds-card__footer">
+                   
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                           <div class="slds-truncate" >Object Name</div>
+                        </th>
+                        <th class="" scope="col">
+                           <div class="slds-truncate" >Text Field</div>
+                        </th>
+                        <th class="" scope="col">
+                           <div class="slds-truncate" >Feields to Fetch</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" >Buttons</div>
+                         </th>
+                    </tr>
+                </thead>    
+                 <tbody>
+                    <template for:each={mdtLsts} for:item="mdtLst">
+                        <tr class="slds-hint-parent" key={mdtLst.Id}>
+
+                            <td>
+                                <div class="slds-line-clamp_x-small">{mdtLst.ObjName__c}</div>
+                            </td>
+
+                            <td>
+                                <div class="slds-line-clamp_x-small">{mdtLst.TextFld__c}</div>
+                            </td>
+
+                            <td>
+                                <div class="slds-line-clamp_x-small">{mdtLst.FldsToFetch__c}</div>
+                            </td>
+                            
+                            <td>
+                                <div class="slds-truncate " >
+
+                                    <!-- sldsValidatorIgnoreNextLine -->
+                                    <lightning-button-icon icon-name="utility:edit" class="slds-var-m-left_xx-small" data-name={mdtLst.ObjName__c} onclick={editBtn}></lightning-button-icon>
+
+                                 </div>
+                            </td>
+
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <div class="slds-text-align_right slds-var-m-top_x-small">
+                <lightning-button vertical-align="end" class="slds-float_left" variant="Brand" label="Back"  onclick={backBtn}  disabled={enableBackButton}  ></lightning-button>  
+                <lightning-button vertical-align="end"  variant="Brand" label="Next"  onclick={nextBtn}  disabled={enableButton}  ></lightning-button>  
+            </div>
+        </footer>
+
+    </article>
+</template>
+<!--  -->

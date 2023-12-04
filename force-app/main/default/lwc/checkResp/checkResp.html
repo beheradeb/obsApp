@@ -1,0 +1,21 @@
+<template>
+    <lightning-card variant="narrow">
+
+        <h1 slot="title">Chat GPT Setup Page</h1>
+
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_4-of-8">
+                <lightning-input class="slds-var-m-around_x-small input"  type="text" onchange={inpTxt} label="Secrete Key" placeholder="Enter Chat GPT Secrete Key"></lightning-input>
+            </div> 
+        </div>
+        
+        <div slot="actions">
+            <lightning-button  vertical-align="end"  variant="Brand" label="Test Response"  onclick={testRespBtn}  disabled={testResBtnDisable} ></lightning-button> 
+        </div>
+
+        <div slot="footer" >
+            <lightning-button vertical-align="end"  variant="Brand" label="Next"  onclick={nextBtn}  disabled={nextBtnDisable}  ></lightning-button>  
+        </div>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,42 @@
+<template>
+    <lightning-card>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item padding="around-small" size="12">
+                <div class="slds-align_absolute-center">
+                    <b>Configurtion setup</b>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12">
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="3">
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="3">
+                        <lightning-input class="slds-var-p-left_xx-large" type="checkbox" label="ChatGPT  config" data-id="ChatGPT_config__c" checked={chatCheck} onchange={handleChange} ></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="3">
+                        <lightning-input class="slds-var-p-left_xx-large" type="checkbox" label="Object setup config" data-id="Object_setup_config__c" checked={objCheck} onchange={handleChange} ></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="3">
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="3">
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="3">
+                        <lightning-input class="slds-var-p-left_xx-large" type="checkbox" label="Metadata config" data-id="Metadata_config__c" checked={metaCheck} onchange={handleChange} ></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="3">
+                        <lightning-input class="slds-var-p-left_xx-large" type="checkbox" label="Data Process config" data-id="Data_Process_config__c" checked={dataCheck} onchange={handleChange} ></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="3">
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12">
+                <lightning-button vertical-align="end" class="slds-align_absolute-center" variant="Brand" label="Back"  onclick={backBtn}  disabled={enableBackButton}  ></lightning-button>  
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

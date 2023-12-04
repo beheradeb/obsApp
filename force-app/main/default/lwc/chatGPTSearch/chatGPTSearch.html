@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="ChatGPT Search">
+       <lightning-button label="Search" variant="brand" slot="actions" onclick={btn}></lightning-button>
+       <p class="slds-var-p-horizontal_small">
+         <lightning-textarea onchange={textInput} class="style slds-var-m-right_xx-large" name="input" placeholder="Enter your search..."  maxlength="500" message-when-too-long="A maximum of 500 characters are allowed in a tweet."></lightning-textarea>
+       </p>
+       <div >
+        <lightning-datatable
+                key-field="id"
+                data={data}
+                columns={columns}>
+        </lightning-datatable>
+    </div>
+    </lightning-card>
+</template>

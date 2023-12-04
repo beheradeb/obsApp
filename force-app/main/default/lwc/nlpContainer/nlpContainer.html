@@ -1,0 +1,20 @@
+<template>
+    <c-proc-ind onprogess={onProgHandle} currstp={pv}></c-proc-ind>
+    <div class="slds-var-m-top_x-small">
+        <template lwc:if={checkRespFlag}>
+            <c-check-resp onprogess={onProgHandle}></c-check-resp>
+        </template>
+        <template lwc:elseif={metaDataFlag}>
+            <c-multi-obj onprogess={onProgHandle}></c-multi-obj>
+        </template>
+        <template lwc:elseif={dataProcFlag}>
+            <c-proc-rec onprogess={onProgHandle}></c-proc-rec>
+        </template>
+        <template lwc:elseif={configSetFlag}>
+            <c-config-set onprogess={onProgHandle}></c-config-set>
+        </template>
+        <template lwc:elseif={objsetFlag}>
+            <c-obj-set-up onprogess={onProgHandle}></c-obj-set-up>
+        </template>
+    </div>
+</template>
